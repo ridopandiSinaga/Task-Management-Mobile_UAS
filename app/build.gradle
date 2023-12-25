@@ -7,7 +7,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.codeathome.todo"
+        applicationId "com.pemrogramanmobile.todo"
         minSdk 23
         targetSdk 34
         versionCode 1
@@ -29,7 +29,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    namespace 'com.codeathome.todo'
+    namespace 'com.pemrogramanmobile.todo'
 }
 
 dependencies {

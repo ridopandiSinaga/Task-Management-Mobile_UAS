@@ -1,4 +1,4 @@
-package com.codeathome.todo.model
+package com.pemrogramanmobile.todo.model
 
 
 import com.google.gson.annotations.SerializedName
