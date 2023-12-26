@@ -1,5 +1,6 @@
 package com.pemrogramanmobile.todo.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
     private lateinit var rvParent: RecyclerView
     private lateinit var swPlayout: SwipeRefreshLayout
     private lateinit var btnAdd: FloatingActionButton
+    private lateinit var btnSearch: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,13 +38,13 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
 
         swPlayout = findViewById(R.id.swpRef)
         swPlayout.setOnRefreshListener(this)
-
         getAllTodos()
     }
 
     fun displayView(){
         rvParent = findViewById(R.id.rv_parent)
         btnAdd = findViewById(R.id.btn_fload_add)
+        btnSearch = findViewById(R.id.btn_fload_search)
 
         val layoutManger = LinearLayoutManager(this)
         layoutManger.orientation = LinearLayoutManager.HORIZONTAL
@@ -55,10 +57,12 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
         ApiConfig.instanceRetrofit.getAllTodo().enqueue(object : Callback<Todo>{
             override fun onResponse(call: Call<Todo>, response: Response<Todo>) {
                 if (response.isSuccessful){
+                    Log.d("Get All Todos", response.body()?.data.toString())
                     adapter = AdapterCard(this@MainActivity, response.body()?.data.orEmpty())
 
                     displayView()
                     postTodo()
+                    searchTodo()
 
                     swPlayout.isRefreshing = false
                 }
@@ -107,6 +111,29 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
             }
 
         }
+    }
+
+    fun searchTodo() {
+        btnSearch.setOnClickListener {
+            val mDialog =
+                LayoutInflater.from(this).inflate(R.layout.dialog_searchtodo, null)
+
+            val edtDialog = mDialog.findViewById<EditText>(R.id.edt_search_todo)
+            val btnCari = mDialog.findViewById<Button>(R.id.btn_searchtodo)
+
+            val mBuild = AlertDialog.Builder(this)
+                .setView(mDialog)
+                .setTitle("Search Todo")
+
+            val mAlertDialog = mBuild.show()
+            btnCari.setOnClickListener {
+                startActivity(
+                    Intent(this@MainActivity, SearchActivity::class.java)
+                        .putExtra("keywords", edtDialog.text.toString())
+                )
+            }
+        }
+
     }
 
     override fun onRefresh() {

@@ -8,4 +8,7 @@
     <string name="batal">batal</string>
     <string name="hapus">hapus</string>
     <string name="update">update</string>
+    <string name="cari">cari</string>
+    <string name="cari_untuk">Cari Todo untuk:</string>
+    <string name="keywords">Keywords</string>
 </resources>

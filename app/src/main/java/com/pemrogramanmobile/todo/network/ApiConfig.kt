@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiConfig {
 
-    private const val BASE_URL= "http://192.168.56.1:3000/api/v1/"
+    private const val BASE_URL= "http:/10.0.2.2:3000/api/v1/"
 
     private val client: Retrofit
         get() {
@@ -35,5 +35,4 @@ object ApiConfig {
 
     val instanceRetrofit: ApiService
         get() = client.create(ApiService::class.java)
-
 }
