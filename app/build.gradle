@@ -50,5 +50,4 @@ dependencies {
 
     //UI
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshVersion"
-
 }

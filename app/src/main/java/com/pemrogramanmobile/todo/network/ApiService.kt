@@ -10,6 +10,11 @@ interface ApiService {
     @GET("todos")
     fun getAllTodo(): Call<Todo>
 
+    @GET("todos/search")
+    fun getSearchTodo(
+        @Query("keywords") keywords: String?
+    ):Call<Todo>
+
     @FormUrlEncoded
     @POST("todos")
     fun postTodo(
