@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_searchtodo"
+        android:id="@+id/btn_search_todo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cari"
