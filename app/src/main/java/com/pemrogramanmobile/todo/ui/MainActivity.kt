@@ -101,7 +101,6 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
                             Toast.makeText(this@MainActivity, "Data Gagal Ditambahkan", Toast.LENGTH_SHORT).show()
                         }
                     }
-
                     override fun onFailure(call: Call<Todo>, t: Throwable) {
                         getAllTodos()
                     }
@@ -119,7 +118,7 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
                 LayoutInflater.from(this).inflate(R.layout.dialog_searchtodo, null)
 
             val edtDialog = mDialog.findViewById<EditText>(R.id.edt_search_todo)
-            val btnCari = mDialog.findViewById<Button>(R.id.btn_searchtodo)
+            val btnCari = mDialog.findViewById<Button>(R.id.btn_search_todo)
 
             val mBuild = AlertDialog.Builder(this)
                 .setView(mDialog)
