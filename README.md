@@ -8,6 +8,7 @@
 **Dosen:** Dr. Marischa Elveny, S.TI, M.Kom  
 **Sifat Ujian:** Project-based assignments
 
+
 # Cara menggunakan
 
 ## 1. Terlebih dahulu instalasi Backend.
@@ -34,6 +35,11 @@ Lalu input link berikut kedalam box URL:
 Berikut demo appnya:
 
 https://www.youtube.com/watch?v=yw7ssSvfYKU
+
+![image](https://github.com/ridopandiSinaga/Task-Management-Mobile_UAS/assets/89272004/a952b83f-9335-4cd4-a91d-33ed5a939494)
+
+![image](https://github.com/ridopandiSinaga/Task-Management-Mobile_UAS/assets/89272004/1d551194-e02f-4e91-8163-52e535da58c6)
+
    
 
 
